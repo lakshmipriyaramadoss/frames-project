@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Cart - Lakshmi Frames</title>
+<link rel="stylesheet" href="cart.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <h2>Frames</h2>
+  </header>
+
+  <section class="cart-container">
+  <h1>Your Cart</h1>
+
+
+  <div class="cart-item">
+    <img src="wooden-pic.jpg" >
+    <div class="item-details">
+      <h3>Wooden Frame</h3>
+
+      Size:
+      <select id="woodSize" onchange="calculateTotal()">
+        <option value="499">8 x 10 - ₹499</option>
+        <option value="699">12 x 16 - ₹699</option>
+        <option value="999">16 x 20 - ₹999</option>
+      </select>
+      <br>
+
+      Quantity:
+      <input type="number" id="woodQty" value="1" min="1" onchange="calculateTotal()">
+
+      <p>Item Total: ₹<span id="woodTotal">499</span></p>
+    </div>
+  </div>
+
+  <div class="cart-item">
+    <img src="college-frame.jpg" >
+    <div class="item-details">
+      <h3>Collage Frame</h3>
+
+      Size:
+      <select id="collageSize" onchange="calculateTotal()">
+        <option value="799">A4 - ₹799</option>
+        <option value="1199">A3 - ₹1199</option>
+        <option value="1599">A2 - ₹1599</option>
+      </select>
+      <br>
+
+      Quantity:
+      <input type="number" id="collageQty" value="1" min="1" onchange="calculateTotal()">
+
+      <p>Item Total: ₹<span id="collageTotal">799</span></p>
+    </div>
+  </div>
+
+  <div class="total-box">
+    <h2>Total: ₹<span id="grandTotal">1298</span></h2>
+    <button onclick="calculateTotal()"> <table>Total</table></button>
+    <p id="message"></p>
+
+    <br>
+    <a href="index.html" class="back-btn">
+      <button>Back to Home</button>
+    </a>
+  </div>
+
+  </section>
+
+</body>
+<script>
+  function calculateTotal() {
+
+    const woodPrice = Number(document.getElementById("woodSize").value);
+    const woodQty = Number(document.getElementById("woodQty").value);
+    const woodTotal = woodPrice * woodQty;
+    document.getElementById("woodTotal").textContent = woodTotal;
+
+
+    const collagePrice = Number(document.getElementById("collageSize").value);
+    const collageQty = Number(document.getElementById("collageQty").value);
+    const collageTotal = collagePrice * collageQty;
+    document.getElementById("collageTotal").textContent = collageTotal;
+
+
+    const grandTotal = woodTotal + collageTotal;
+    document.getElementById("grandTotal").textContent = grandTotal;
+
+
+    localStorage.setItem("totalAmount", grandTotal);
+
+    /*document.getElementById("message").textContent =
+      "Total saved! Your amount is ₹" + grandTotal;*/
+  }
+</script>
+</html>

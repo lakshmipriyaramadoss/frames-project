@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Lakshmi Frames</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h2>Frames</h2>
+  </header>
+
+  <section class="contact-container">
+    <h1>Contact Us</h1>
+    <p class="subtitle">We would love to hear from you!</p>
+
+    <div class="contact-box">
+      <p><strong>📍 Address:</strong> Chennai, Tamil Nadu</p>
+      <p><strong>📞 Phone:</strong> +91 xxxxxx</p>
+      <p><strong>📧 Email:</strong> lakshmipriyaramadoss05@gmail.com</p>
+    </div>
+
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="4cdaa27d-15a9-45fd-9c6d-585b79c67748">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="Message" placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <button onclick="window.location.href='index.html'" class="back-btn">
+      back to home page
+    </button>
+  </section>
+
+</body>
+</html>
